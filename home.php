@@ -138,10 +138,8 @@ and open the template in the editor.
                                     </li>
                                 </ul>
                                 <form class="navbar-form navbar-left" role="search">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                    </div>
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Nađi psa</button>
+                                    
+                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" name="submit4">Prikaži pse</button>
                                 </form>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a href="index.php"><span class="glyphicon glyphicon-log-out"></span></a></li>
@@ -170,10 +168,60 @@ and open the template in the editor.
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
+                    <h4 class="modal-title">PSI I VLASNICI</h4>
                   </div>
                   <div class="modal-body">
-                    <p>Some text in the modal.</p>
+                    <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+
+                    <th>Ime</th>
+                    <th>Datum rođenja</th>
+                    <th>Ime vlasnika</th>
+                    <th>Prezime vlasnika</th>
+                    
+
+                    </tr>
+                </thead>
+                <tbody>
+                        <?php
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "";
+                            $dbname = "baza";
+
+                            // Create connection
+                            $conn = new mysqli($servername, $username, $password, $dbname);
+                            // Check connection
+                            if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
+                            } 
+                            
+                         
+                                
+                            $sql = "SELECT p.ime, p.godina_rodenja, v.ime, v.prezime FROM pas p, vlasnik v, posjeduje pos WHERE p.id=pos.pas_id and v.id=pos.vlasnik_id";
+                            $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        echo "<tr style='text-align: left;'>";
+                                            echo "<td >".$row["ime"]. "</td>";
+                                            echo "<td>".$row["godina_rodenja"]. "</td>";
+                                            echo "<td>".$row["ime"]. "</td>";
+                                            echo "<td>".$row["prezime"]. "</td>";
+
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "0 results";
+                                }
+                            
+                            $conn->close();
+                        ?>
+
+                </tbody>
+            </table>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

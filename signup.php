@@ -13,25 +13,18 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        
         <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-Xqcy5ttufkC3rBa8EdiAyA1VgOGrmel2Y+wxm4K3kI3fcjTWlDWrlnxyD6hOi3PF" crossorigin="anonymous">
-  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <title></title>
         <style>
-           
             h1{
                 text-align: center;
             }
-            
         </style>
     </head>
     <body>
        <div class="container">
-          
            <form action="signup.php" method="post" class="form-horizontal">
                     <fieldset>
                       <legend>Novi korisnik</legend>
@@ -46,9 +39,7 @@ and open the template in the editor.
                         <div class="col-lg-8">
                           <input type="text" class="form-control" name="password" placeholder="password">
                         </div>
-                      </div>
-      
-                      
+                      </div>  
                       <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                           <a href="index.php" class="btn btn-default">Cancel</a>
@@ -93,7 +84,7 @@ and open the template in the editor.
                                             </button>
                                         </div>";
                             echo $result;
-                            //header("Location: home.php");
+                           
                         } else {
                             echo "Error: " . $sql . "<br>" . $conn->error;
                         }

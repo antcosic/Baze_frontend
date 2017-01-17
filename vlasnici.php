@@ -18,7 +18,9 @@ and open the template in the editor.
         </style>
     </head>
     <body>
-        
+        <button type='button' class='btn btn-default btn-sm' href='home.php'>
+            <span class='glyphicon glyphicon-home'></span> <a href='home.php'> Home </a>
+        </button>
        <h1> Popis vlasnika pasa</h1>
        
        
