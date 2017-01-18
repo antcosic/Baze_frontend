@@ -27,6 +27,9 @@ and open the template in the editor.
                 text-align: center;
             }
             
+            a {
+                text-decoration: none !important;
+            }
         </style>
     </head>
     <body>
@@ -107,6 +110,7 @@ and open the template in the editor.
                             $result = "<div class='alert alert-dismissible alert-success'>
                                             <button type='button' class='close' data-dismiss='alert'>&times;</button>
                                             <strong>Uspjesno ste dodali novog vlasnika!</strong>
+                                            <a href='vlasnici.php' class='alert-link'>Idi na popis vlasnika</a>
                                         </div>";
                             echo $result;
                         } else {

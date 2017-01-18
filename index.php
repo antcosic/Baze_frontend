@@ -19,7 +19,7 @@
         } else {
             $result2="<div class='alert alert-dismissible alert-danger'>
                         <button type='button' class='close' data-dismiss='alert'>&times;</button>
-                        <strong>Unjeli ste krivi username ili password!!</strong>
+                        <strong>Unijeli ste krivi username ili password!!</strong>
                       </div>" ;
         }
     }

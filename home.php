@@ -128,12 +128,10 @@ and open the template in the editor.
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href="vlasnici.php">Vlasnici</a></li>
-                                            <li><a href="#">Another action</a></li>
-                                            <li><a href="#">Something else here</a></li>
+                                            <li><a href="pasmine.php">Pasmine</a></li>
                                             <li class="divider"></li>
-                                            <li><a href="#">Separated link</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">One more separated link</a></li>
+                                            <li><a href="skupine.php">Skupine</a></li>
+                                          
                                         </ul>
                                     </li>
                                 </ul>
@@ -142,7 +140,7 @@ and open the template in the editor.
                                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" name="submit4">Prikaži pse</button>
                                 </form>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="index.php"><span class="glyphicon glyphicon-log-out"></span></a></li>
+                                    <li><a href="index.php"><span class="glyphicon glyphicon-log-out" style="color: #2048b2"></span></a></li>
                                 </ul>
                                 
   
@@ -199,14 +197,14 @@ and open the template in the editor.
                             
                          
                                 
-                            $sql = "SELECT p.ime, p.godina_rodenja, v.ime, v.prezime FROM pas p, vlasnik v, posjeduje pos WHERE p.id=pos.pas_id and v.id=pos.vlasnik_id";
+                            $sql = "SELECT p.ime as 'pas', p.godina_rodenja, v.ime, v.prezime FROM pas p, vlasnik v, posjeduje pos WHERE p.id=pos.pas_id and v.id=pos.vlasnik_id";
                             $result = $conn->query($sql);
 
                                 if ($result->num_rows > 0) {
                                     // output data of each row
                                     while($row = $result->fetch_assoc()) {
                                         echo "<tr style='text-align: left;'>";
-                                            echo "<td >".$row["ime"]. "</td>";
+                                            echo "<td >".$row["pas"]. "</td>";
                                             echo "<td>".$row["godina_rodenja"]. "</td>";
                                             echo "<td>".$row["ime"]. "</td>";
                                             echo "<td>".$row["prezime"]. "</td>";
