@@ -1,6 +1,10 @@
 CRUD application for dogs
 
-Requirements:
+## Requirements
 
--JDK-8.0+
--XAMPP
+* JDK-8.0+
+
+## Tools:
+* XAMPP
+* phpMyAdmin
+* NetBeans 8.1
