@@ -1,4 +1,4 @@
-CRUD application for dogs
+## CRUD application for dog owners
 
 ## Requirements
 
