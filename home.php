@@ -237,7 +237,7 @@ and open the template in the editor.
             var myVar;
 
             function myFunction() {
-                myVar = setTimeout(showPage, 500);
+                myVar = setTimeout(showPage, 1000);
             }
 
             function showPage() {

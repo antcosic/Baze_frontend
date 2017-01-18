@@ -67,14 +67,14 @@ and open the template in the editor.
                                 // output data of each row
                                 while($row = $result->fetch_assoc()) {
                                     echo "<tr style='text-align: left;'>";
-                                        echo "<td >".$row["id"]. "</td>";
+                                        echo "<td >".$row["id"]. "</td>";                               
                                         echo "<td>".$row["ime"]. "</td>";
                                         echo "<td>".$row["prezime"]. "</td>";
                                         echo "<td>".$row["adresa"]. "</td>";
                                         echo "<td>".$row["email"]. "</td>";
                                         echo "<td style='width: 150px;'>".$row["telefon"]. "</td>";
                                         echo "<td style='width: 200px;'>"                                                                            
-                                                ."<button type='button' class='btn btn-default btn-sm' style='background-color: #4f72d0;' ><span class='glyphicon glyphicon-edit' style='color: yellow;'></span><a data-toggle='modal' data-target='#myModal' href='edit.php?id=25'>Edit</a></button>"                                                                                    
+                                                ."<button type='button' class='btn btn-default btn-sm' style='background-color: #4f72d0;' ><span class='glyphicon glyphicon-edit' style='color: yellow;'></span><a href=\"edit.php?id=".$row['id']."\">Edit</a></button>"                                                                                    
                                                 ."<button type='button' class='btn btn-default btn-sm' style='background-color: #3e5ae3;' ><span class='glyphicon glyphicon-remove' style='color: #ff4c4c;'></span><a href=\"delete.php?id=".$row['id']."\">Delete</a></button>"                                                                             
                                             ."</td>";
                                     
